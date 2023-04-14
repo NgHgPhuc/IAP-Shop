@@ -41,40 +41,48 @@ public class SaveLoadSystem : MonoBehaviour
 
     public void SaveInventory()
     {
-        string path = Application.persistentDataPath + "/PlayerData.txt";
-        if (!File.Exists(path))
-            File.Create(path);
-
-        string InventoryData = "";
-        foreach (KeyValuePair<string,Slot> slot in inventory.inventory)
+        try
         {
-            InventoryData += slot.Key + "_" + slot.Value.Number + "\n";
-        }
+            string path = Application.persistentDataPath + "/PlayerData.txt";
+            if (!File.Exists(path))
+                File.Create(path);
 
-        File.WriteAllText(path, InventoryData);
+            string InventoryData = "";
+            foreach (KeyValuePair<string, Slot> slot in inventory.inventory)
+            {
+                InventoryData += slot.Key + "_" + slot.Value.Number + "\n";
+            }
+
+            File.WriteAllText(path, InventoryData);
+        }
+        catch (Exception e) { Debug.Log("Error at Save Inventory" + e); }
     }
 
     public void LoadInventory()
     {
-        string path = Application.persistentDataPath + "/PlayerData.txt";
-        if (!File.Exists(path))
-            return;
-
-        StreamReader sr = new StreamReader(path);
-
-        //if (Line == "") return;
-        string Line = sr.ReadLine();
-        while (Line != null && Line != "")
+        try
         {
-            string itemID = Line.Split("_")[0];
-            int Number = int.Parse(Line.Split("_")[1]);
+            string path = Application.persistentDataPath + "/PlayerData.txt";
+            if (!File.Exists(path))
+                return;
 
-            Slot s = new Slot((Item)ItemsData[itemID],Number);
-            inventory.InventoryAdd(s);
-            Line = sr.ReadLine();
+            StreamReader sr = new StreamReader(path);
 
+            //if (Line == "") return;
+            string Line = sr.ReadLine();
+            while (Line != null && Line != "")
+            {
+                string itemID = Line.Split("_")[0];
+                int Number = int.Parse(Line.Split("_")[1]);
+
+                Slot s = new Slot((Item)ItemsData[itemID], Number);
+                inventory.InventoryAdd(s);
+                Line = sr.ReadLine();
+
+            }
+            sr.Close();
         }
-        sr.Close();
+        catch (Exception e) { Debug.Log("Error at Load Inventory" + e); }
     }
 
     public void SaveResource()
@@ -89,7 +97,7 @@ public class SaveLoadSystem : MonoBehaviour
 
             File.WriteAllText(path, ResourceData);
         }
-        catch (Exception) { Debug.Log("Error at Save Resource"); }
+        catch (Exception e) { Debug.Log("Error at Save Resource"+e); }
     }
 
     public void LoadResource()
@@ -110,7 +118,7 @@ public class SaveLoadSystem : MonoBehaviour
             ResourcePanel.Instance.ReloadResourceShow();
             sr.Close();
         }
-        catch (Exception) { Debug.Log("Error at Load Resource"); }
+        catch (Exception e) { Debug.Log("Error at Load Resource" + e); }
     }
 
     private void OnApplicationQuit()
