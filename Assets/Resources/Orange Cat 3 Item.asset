@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ace4ea806d6b04658a886dbbe93fb0ef, type: 3}
-  m_Name: OrangeCat 2 Item
+  m_Name: Orange Cat 3 Item
   m_EditorClassIdentifier: 
   itemType: 0
-  ID: Item011
-  Name: Orange Cat 2
-  Icon: {fileID: 21300000, guid: a3c9d74e31a3647ccb40a2c9d6a0040d, type: 3}
+  ID: Item012
+  Name: Orange Cat 3
+  Icon: {fileID: 21300000, guid: f3ec4abc6f91549619fa6f2dedaefc89, type: 3}
