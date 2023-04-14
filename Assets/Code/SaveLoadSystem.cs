@@ -107,6 +107,7 @@ public class SaveLoadSystem : MonoBehaviour
             float DiamondMount = float.Parse(Line.Split("_")[1]);
             ResourcePanel.Instance.CoinMount = CoinMount;
             ResourcePanel.Instance.DiamondMount = DiamondMount;
+            ResourcePanel.Instance.ReloadResourceShow();
             sr.Close();
         }
         catch (Exception) { Debug.Log("Error at Load Resource"); }

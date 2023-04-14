@@ -6,6 +6,7 @@ public class ShopPanel : MonoBehaviour
 {
     // Start is called before the first frame update
     public Animator animator;
+    public AdsInitializer adsInitializer;
     void Start()
     {
     }
@@ -20,6 +21,7 @@ public class ShopPanel : MonoBehaviour
     {
         gameObject.SetActive(true);
         animator.Play("Open");
+        adsInitializer.LoadAd();
 
     }
     public void CloseShop()

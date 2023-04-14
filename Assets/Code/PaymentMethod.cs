@@ -30,10 +30,10 @@ public class PaymentMethod : MonoBehaviour
                 PayInCoin(bundleObject);
                 break;
             case Cost.CostType.Diamond:
-
+                PayInDiamond(bundleObject);
                 break;
             case Cost.CostType.Ads:
-
+                PayInAds(bundleObject);
                 break;
             default:
                 break;
@@ -44,7 +44,7 @@ public class PaymentMethod : MonoBehaviour
 
     void PayInCoin(BundleObject bundleObject)
     {
-        if(!ResourcePanel.Instance.CheckEnoughCoin(bundleObject.cost.Mount))
+        if (!ResourcePanel.Instance.CheckEnough(bundleObject.cost.Mount, ResourcePanel.Instance.CoinMount))
         {
             //Debug Error Log
             return;
@@ -52,9 +52,34 @@ public class PaymentMethod : MonoBehaviour
 
         //Minus Cost
         ResourcePanel.Instance.UseCoin(-bundleObject.cost.Mount); //lost coin
-        foreach(Slot s in bundleObject.Items)
+        GetItem(bundleObject); // get item from bundle
+
+    }
+    void PayInDiamond(BundleObject bundleObject)
+    {
+        if (!ResourcePanel.Instance.CheckEnough(bundleObject.cost.Mount, ResourcePanel.Instance.DiamondMount))
         {
-            switch(s.item.GetItemType())
+            //Debug Error Log
+            return;
+        }
+
+        //Minus Cost
+        ResourcePanel.Instance.UseDiamond(-bundleObject.cost.Mount); //lost coin
+        GetItem(bundleObject); // get item from bundle
+
+    }
+
+    void PayInAds(BundleObject bundleObject) //cost nothing but time :D
+    {
+        GetItem(bundleObject);
+    }
+
+    //Get item and add to inventory
+    void GetItem(BundleObject bundleObject)
+    {
+        foreach (Slot s in bundleObject.Items)
+        {
+            switch (s.item.GetItemType())
             {
                 case Item.ItemType.ITEM:
                     inventorySystem.InventoryAdd(s);
@@ -64,11 +89,10 @@ public class PaymentMethod : MonoBehaviour
                         ResourcePanel.Instance.UseCoin(s.Number); //get coin
                     if (s.item.GetID() == "Diamond")
                         ResourcePanel.Instance.UseDiamond(s.Number);
-                        break;
+                    break;
                 default:
                     break;
             }
         }
-
     }
 }

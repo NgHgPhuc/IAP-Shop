@@ -32,11 +32,7 @@ public class ResourcePanel : MonoBehaviour
 
     void Start()
     {
-
-        CoinTextShow = "x" + CoinMount;
-        CoinTMP.SetText(CoinTextShow);
-        DiamondTextShow = "x" + DiamondMount;
-        DiamondTMP.SetText(DiamondTextShow);
+        ReloadResourceShow();
     }
 
     // Update is called once per frame
@@ -45,10 +41,17 @@ public class ResourcePanel : MonoBehaviour
         
     }
 
-    //COIN
-    public bool CheckEnoughCoin(float Need)
+    public void ReloadResourceShow()
     {
-        if (Need > CoinMount)
+        CoinTextShow = "x" + CoinMount;
+        CoinTMP.SetText(CoinTextShow);
+        DiamondTextShow = "x" + DiamondMount;
+        DiamondTMP.SetText(DiamondTextShow);
+    }
+    //COIN
+    public bool CheckEnough(float Need,float Have)
+    {
+        if (Need > Have)
             return false;
         return true;
     }
@@ -69,13 +72,6 @@ public class ResourcePanel : MonoBehaviour
         }
     }
 
-    //DIAMOND
-    public bool CheckEnoughDiamond(float Need)
-    {
-        if (Need > DiamondMount)
-            return false;
-        return true;
-    }
     public void UseDiamond(float mount)
     {
         DiamondMount += mount;

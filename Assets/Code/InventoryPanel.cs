@@ -11,6 +11,7 @@ public class InventoryPanel : MonoBehaviour
     public InventorySystem inventorySystem;
 
     string NameSlotChosing;
+    public Animator animator;
     void Start()
     {
         
@@ -48,12 +49,14 @@ public class InventoryPanel : MonoBehaviour
     {
         UpdateInventoryUI();
         gameObject.SetActive(true);
+        animator.Play("Open");
         InfoPanel.Find("Icon").GetComponent<Image>().sprite = null;
         InfoPanel.Find("Name").GetComponent<TextMeshProUGUI>().SetText("???");
+
     }
     public void ClickBackground()
     {
-        CloseInventoryUI();
+        animator.Play("Close");
     }
     public void CloseInventoryUI()
     {
@@ -66,7 +69,6 @@ public class InventoryPanel : MonoBehaviour
         NameSlotChosing = slotUI.Find("Icon").GetComponent<Image>().sprite.name;
         InfoPanel.Find("Icon").GetComponent<Image>().sprite = slotUI.Find("Icon").GetComponent<Image>().sprite;
         InfoPanel.Find("Name").GetComponent<TextMeshProUGUI>().SetText(NameSlotChosing);
-        Debug.Log(NameSlotChosing);
     }
 
     public void DropButton()
