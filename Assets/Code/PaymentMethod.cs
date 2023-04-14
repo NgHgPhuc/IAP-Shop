@@ -24,7 +24,7 @@ public class PaymentMethod : MonoBehaviour
         switch (bundleObject.cost.costType)
         {
             case Cost.CostType.Money:
-
+                PayInMoney(bundleObject);
                 break;
             case Cost.CostType.Coin:
                 PayInCoin(bundleObject);
@@ -41,7 +41,10 @@ public class PaymentMethod : MonoBehaviour
         }
 
     }
-
+    void PayInMoney(BundleObject bundleObject) //cost nothing but time :D
+    {
+        GetItem(bundleObject);
+    }
     void PayInCoin(BundleObject bundleObject)
     {
         if (!ResourcePanel.Instance.CheckEnough(bundleObject.cost.Mount, ResourcePanel.Instance.CoinMount))

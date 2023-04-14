@@ -10,9 +10,10 @@ public class BundleObject : MonoBehaviour
     public Cost cost;
 
     public Button BuyButton;
+    public bool PayInGame;
     void Start()
     {
-
-        BuyButton.onClick.AddListener(delegate { PaymentMethod.Instance.Pay(this);});
+        if(PayInGame)
+            BuyButton.onClick.AddListener(delegate { PaymentMethod.Instance.Pay(this);});
     }
 }

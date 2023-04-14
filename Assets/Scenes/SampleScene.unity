@@ -3829,6 +3829,7 @@ MonoBehaviour:
     costType: 0
     Mount: 10.99
   BuyButton: {fileID: 735246202}
+  PayInGame: 0
 --- !u!1 &242438263
 GameObject:
   m_ObjectHideFlags: 0
@@ -9362,6 +9363,7 @@ GameObject:
   - component: {fileID: 735246204}
   - component: {fileID: 735246203}
   - component: {fileID: 735246202}
+  - component: {fileID: 735246205}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -9472,6 +9474,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735246200}
   m_CullTransparentMesh: 1
+--- !u!114 &735246205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735246200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 3
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 265237650}
+        m_TargetAssemblyTypeName: PaymentMethod, Assembly-CSharp
+        m_MethodName: Pay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 241968317}
+          m_ObjectArgumentAssemblyTypeName: BundleObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &741449538
 GameObject:
   m_ObjectHideFlags: 0
@@ -9651,6 +9692,7 @@ MonoBehaviour:
     costType: 3
     Mount: 0
   BuyButton: {fileID: 1312753888}
+  PayInGame: 1
 --- !u!1 &757388668
 GameObject:
   m_ObjectHideFlags: 0
@@ -10282,6 +10324,7 @@ MonoBehaviour:
     costType: 1
     Mount: 100000000
   BuyButton: {fileID: 554837828}
+  PayInGame: 0
 --- !u!1 &846334618
 GameObject:
   m_ObjectHideFlags: 0
@@ -10294,6 +10337,7 @@ GameObject:
   - component: {fileID: 846334622}
   - component: {fileID: 846334621}
   - component: {fileID: 846334620}
+  - component: {fileID: 846334623}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -10404,6 +10448,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846334618}
   m_CullTransparentMesh: 1
+--- !u!114 &846334623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846334618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 4
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 265237650}
+        m_TargetAssemblyTypeName: PaymentMethod, Assembly-CSharp
+        m_MethodName: Pay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2139859866}
+          m_ObjectArgumentAssemblyTypeName: BundleObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &848667280
 GameObject:
   m_ObjectHideFlags: 0
@@ -15111,7 +15194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1246530969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17206,6 +17289,7 @@ MonoBehaviour:
     costType: 2
     Mount: 200
   BuyButton: {fileID: 107257210}
+  PayInGame: 1
 --- !u!1 &1492669425
 GameObject:
   m_ObjectHideFlags: 0
@@ -17740,6 +17824,7 @@ MonoBehaviour:
     costType: 0
     Mount: 9.99
   BuyButton: {fileID: 2006146279}
+  PayInGame: 0
 --- !u!1 &1516927724
 GameObject:
   m_ObjectHideFlags: 0
@@ -18519,6 +18604,7 @@ MonoBehaviour:
     costType: 1
     Mount: 9000
   BuyButton: {fileID: 644772538}
+  PayInGame: 1
 --- !u!1 &1570671795
 GameObject:
   m_ObjectHideFlags: 0
@@ -19333,7 +19419,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.1
+  m_fontSize: 65.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -21940,6 +22026,7 @@ MonoBehaviour:
     costType: 3
     Mount: 0
   BuyButton: {fileID: 1139674223}
+  PayInGame: 1
 --- !u!1 &1878532547
 GameObject:
   m_ObjectHideFlags: 0
@@ -23333,6 +23420,7 @@ GameObject:
   - component: {fileID: 2006146281}
   - component: {fileID: 2006146280}
   - component: {fileID: 2006146279}
+  - component: {fileID: 2006146282}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -23443,6 +23531,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2006146277}
   m_CullTransparentMesh: 1
+--- !u!114 &2006146282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006146277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 2
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 265237650}
+        m_TargetAssemblyTypeName: PaymentMethod, Assembly-CSharp
+        m_MethodName: Pay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1506201782}
+          m_ObjectArgumentAssemblyTypeName: BundleObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &2006650464
 GameObject:
   m_ObjectHideFlags: 0
@@ -25247,6 +25374,7 @@ MonoBehaviour:
     costType: 0
     Mount: 999.99
   BuyButton: {fileID: 846334620}
+  PayInGame: 0
 --- !u!1 &56676386677797399
 GameObject:
   m_ObjectHideFlags: 0
@@ -25259,6 +25387,7 @@ GameObject:
   - component: {fileID: 3250371811545179983}
   - component: {fileID: 3750562931322037464}
   - component: {fileID: 5758004976701046440}
+  - component: {fileID: 6885672136457850249}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -25862,9 +25991,10 @@ MonoBehaviour:
   - item: {fileID: 11400000, guid: 97b2d6b8820e9447f93cd7dab612af4e, type: 2}
     Number: 100
   cost:
-    costType: 1
+    costType: 0
     Mount: 3.99
   BuyButton: {fileID: 5758004976701046440}
+  PayInGame: 0
 --- !u!1 &4985045938768771008
 GameObject:
   m_ObjectHideFlags: 0
@@ -26196,6 +26326,45 @@ RectTransform:
   m_AnchoredPosition: {x: 1.5, y: -2}
   m_SizeDelta: {x: -3, y: 3.1940918}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6885672136457850249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56676386677797399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a5f511b0d8142cba0aeb92d0b264c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productId: 1
+  buttonType: 0
+  consumePurchase: 1
+  onTransactionsRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  onPurchaseComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 265237650}
+        m_TargetAssemblyTypeName: PaymentMethod, Assembly-CSharp
+        m_MethodName: Pay
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 4721447279271979470}
+          m_ObjectArgumentAssemblyTypeName: BundleObject, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onPurchaseFailed:
+    m_PersistentCalls:
+      m_Calls: []
+  titleText: {fileID: 0}
+  descriptionText: {fileID: 0}
+  priceText: {fileID: 0}
 --- !u!1 &7206854490120213352
 GameObject:
   m_ObjectHideFlags: 0
