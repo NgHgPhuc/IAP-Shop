@@ -47,6 +47,7 @@ public class InventoryPanel : MonoBehaviour
 
     public void OpenInventoryUI()
     {
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Open);
         UpdateInventoryUI();
         gameObject.SetActive(true);
         animator.Play("Open");
@@ -56,6 +57,7 @@ public class InventoryPanel : MonoBehaviour
     }
     public void ClickBackground()
     {
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Close);
         animator.Play("Close");
     }
     public void CloseInventoryUI()
@@ -66,6 +68,7 @@ public class InventoryPanel : MonoBehaviour
 
     public void SetInfoPanel(Transform slotUI)
     {
+        SoundManager.Instance.PlayMeow();
         NameSlotChosing = slotUI.Find("Icon").GetComponent<Image>().sprite.name;
         InfoPanel.Find("Icon").GetComponent<Image>().sprite = slotUI.Find("Icon").GetComponent<Image>().sprite;
         InfoPanel.Find("Name").GetComponent<TextMeshProUGUI>().SetText(NameSlotChosing);
@@ -73,6 +76,7 @@ public class InventoryPanel : MonoBehaviour
 
     public void DropButton()
     {
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Drop);
         inventorySystem.InventoryDrop(NameSlotChosing);
         UpdateInventoryUI();
     }

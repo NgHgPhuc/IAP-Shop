@@ -20,7 +20,7 @@ public class PaymentMethod : MonoBehaviour
 
     public void Pay(BundleObject bundleObject)
     {
-
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Buy);
         switch (bundleObject.cost.costType)
         {
             case Cost.CostType.Money:

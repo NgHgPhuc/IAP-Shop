@@ -19,6 +19,7 @@ public class ShopPanel : MonoBehaviour
 
     public void OpenShop()
     {
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Open);
         gameObject.SetActive(true);
         animator.Play("Open");
         adsInitializer.LoadAd();
@@ -30,6 +31,7 @@ public class ShopPanel : MonoBehaviour
     }
     public void ClickBackground()
     {
+        SoundManager.Instance.SoundFxPlay(SoundManager.Instance.Close);
         animator.Play("Close");
     }
 }
