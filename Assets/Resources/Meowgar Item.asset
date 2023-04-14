@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace4ea806d6b04658a886dbbe93fb0ef, type: 3}
+  m_Name: Meowgar Item
+  m_EditorClassIdentifier: 
+  ID: Item008
+  Name: Meowgar
+  Icon: {fileID: 21300000, guid: 328af576f8d5a4cd0899a6074481e4ac, type: 3}
